@@ -12,4 +12,9 @@ app.use(bodyParser.json())
 
 app.use('/', require('./routes'))
 
-app.listen(3000, () => console.log('Rondando na Porta 3000'))
+//app.listen(3000, () => console.log('Rondando na Porta 3000'))
+
+var port = process.env.PORT || 3000;
+app.listen(port, function () {
+    console.log('Umbler listening on port %s', port);
+});
