@@ -1,0 +1,12 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "titulo": "Camiseta Branca",
+            "descricao": "Camiseta branca simples",
+            "img":"/images/camiseta.jpg",
+            "preco": 24
+        }
+    ]
+}
+

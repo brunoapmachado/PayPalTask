@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <script>
+        function getURL() {
+            let params = (new URL(document.location)).searchParams;
+            let paymentid = params.get("paymentId");
+            document.getElementById("pay_id").innerHTML = paymentid;
+
+        }
+    </script>
+
+
+</head>
+<body onload="getURL()">
+    <div>
+
+        <h2>Pagamento realizado com sucesso</h2>
+
+        <p>Seu pedido teve o pagamento concluído com sucesso. O ID da Transação é:</p>
+
+        <span id="pay_id"></span>
+            
+        <br />
+        <br />
+        
+    </div>
+</body>
+</html>

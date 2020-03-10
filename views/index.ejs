@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title> Loja Bruno Machado</title>
+    <style> 
+        .img-produto{
+            width: 180px;
+            height: 210px;
+        }
+    </style>
+    
+</head>
+
+<body>
+    
+    <div>
+        <h2> Loja do Bruno Machado </h2>
+        <hr /><br />
+
+        <div> 
+            
+            <% for (var i=0; i<products.length; i++){ %>
+                
+            
+                <div>
+                    <img src="<%= products[i].img %>" class="img-produto" />
+                </div>
+            
+                <br />
+                <h2><%= products[i].titulo %></h2>
+                <p><%= products[i].descricao %></p>
+                <p>Item Number: <%= products[i].id %></p>
+                <h3>$<%= products[i].preco %></h3>
+
+                <br />
+            
+                <form action="/buy?id=<%= products[i].id %>" method = "POST">
+                 <input type="submit" value="Comprar" />
+                </form>
+            <% } %>
+
+
+
+        </div>
+
+    </div>
+
+</body>
+</html>
