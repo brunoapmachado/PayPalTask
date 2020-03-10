@@ -29,6 +29,33 @@ router.post('/buy', (req, res) => {
 
     const descricao = product.descricao;
 
+    /* Não consegui implementar a funcionalidade de enviar o endereço, recebi sempre este erro:
+    response: {
+    name: 'MALFORMED_REQUEST',
+    message: 'Incoming JSON request does not map to API request',
+    information_link: 'https://developer.paypal.com/webapps/developer/docs/api/#MALFORMED_REQUEST',
+    debug_id: 'e86530a7dd42e',
+    httpStatusCode: 400
+    },
+    httpStatusCode: 400
+    }
+
+    Como declarei:
+
+    const shippingaddress = {
+            "shipping_address":{
+                "recipient_name": "Brian Robinson",
+                "line1": "4th Floor",
+                "line2": "Unit #34",
+                "city": "San Jose",
+                "country_code": "US",
+                "postal_code": "95131",
+                "phone": "011862212345678",
+                "state": "CA"
+            }
+        };
+    */
+        
     const json_pagamento = {
         "intent": "sale",
         "payer": { payment_method: "paypal"},
@@ -37,9 +64,12 @@ router.post('/buy', (req, res) => {
             "cancel_url":"http://brunotaskpp-com.umbler.net/cancel"
         },
         "transactions": [{
-            "item_list":{"items": carrinho},
+            "item_list":{
+                "items": carrinho
+                //"shipping_address": shippingaddress
+            },
             "amount": valor,
-            "description": descricao
+            "description": descricao,
         }]
     }
     paypal.payment.create(json_pagamento, (err, pagamento) => {
