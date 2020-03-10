@@ -33,8 +33,8 @@ router.post('/buy', (req, res) => {
         "intent": "sale",
         "payer": { payment_method: "paypal"},
         "redirect_urls":{
-            "return_url":"http://localhost:3000/success",
-            "cancel_url":"http://localhost:3000/cancel"
+            "return_url":"http://brunotaskpp-com.umbler.net/success",
+            "cancel_url":"http://brunotaskpp-com.umbler.net/cancel"
         },
         "transactions": [{
             "item_list":{"items": carrinho},

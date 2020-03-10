@@ -4,7 +4,7 @@
             "id": 1,
             "titulo": "Camiseta Branca",
             "descricao": "Camiseta branca simples",
-            "img":"/images/camiseta.jpg",
+            "img":"https://http2.mlstatic.com/camiseta-branca-lisa-basica-fio-301-cardado-D_NQ_NP_916746-MLB25871396353_082017-F.jpg",
             "preco": 24
         }
     ]
