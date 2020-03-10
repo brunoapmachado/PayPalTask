@@ -90,7 +90,7 @@ router.get('/success', (req,res) => {
 
 //cancelar
 router.get('/cancel', (req, res) =>{
-    res.send({ cancel: true})
+    res.render('cancel');
 })
 
 module.exports = router;
